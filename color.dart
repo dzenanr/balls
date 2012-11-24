@@ -1,3 +1,4 @@
+part of balls;
 
 Map<String, String> colorMap() {
   var colors = new Map<String, String>();

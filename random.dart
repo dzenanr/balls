@@ -1,3 +1,4 @@
+part of balls;
 
 double randomDouble(double max) {
   double randomDouble = new Random().nextDouble() * max;

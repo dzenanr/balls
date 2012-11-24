@@ -1,3 +1,5 @@
+library balls;
+
 import 'dart:html';
 import 'dart:isolate';
 import 'dart:math';
