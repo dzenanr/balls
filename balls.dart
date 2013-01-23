@@ -1,7 +1,7 @@
 library balls;
 
 import 'dart:html';
-import 'dart:isolate';
+import 'dart:async';
 import 'dart:math';
 
 part 'color.dart';
@@ -75,7 +75,7 @@ main() {
   var width = canvas.width;
   var height = canvas.height;
   var ballCount = Circle.ballCount;
-  var balls = new List(ballCount);
+  var balls = new List.fixedLength(ballCount);
   for (var i = 0; i < ballCount; i++) {
     var ball =
         new Circle(width/2, height/2, randomDouble((ballCount * 2).toDouble()));
