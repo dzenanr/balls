@@ -80,7 +80,7 @@ main() {
     var ball =
         new Circle(width/2, height/2, randomDouble((ballCount * 2).toDouble()));
     balls[i] = ball;
-    document.on.keyDown.add(ball.onKeyDown);
+    document.onKeyDown.listen(ball.onKeyDown);
   }
   // Redraw every ballCount ms.
   new Timer.repeating(ballCount < 20 ? ballCount : ballCount - 16,
