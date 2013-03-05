@@ -74,16 +74,15 @@ main() {
   CanvasRenderingContext2D context = canvas.getContext('2d');
   var width = canvas.width;
   var height = canvas.height;
-  var ballCount = Circle.ballCount;
-  var balls = new List.fixedLength(ballCount);
-  for (var i = 0; i < ballCount; i++) {
-    var ball =
-        new Circle(width/2, height/2, randomDouble((ballCount * 2).toDouble()));
+  var balls = new List.fixedLength(Circle.ballCount);
+  for (var i = 0; i < Circle.ballCount; i++) {
+    var ball = new Circle(width/2, height/2,
+        randomDouble((Circle.ballCount * 2).toDouble()));
     balls[i] = ball;
     document.onKeyDown.listen(ball.onKeyDown);
   }
   // Redraw every ballCount ms.
-  new Timer.repeating(ballCount < 20 ? ballCount : ballCount - 16,
+  new Timer.repeating(const Duration(milliseconds: Circle.ballCount),
       (t) => draw(context, balls));
 }
 
