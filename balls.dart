@@ -10,7 +10,7 @@ part 'random.dart';
 // based on http://www.efeion.com/canvastest/balls1.js
 
 class Circle {
-  static const int ballCount = 32;
+  static const int BALL_COUNT = 32;
 
   num x;
   num y;
@@ -74,15 +74,15 @@ main() {
   CanvasRenderingContext2D context = canvas.getContext('2d');
   var width = canvas.width;
   var height = canvas.height;
-  var balls = new List.fixedLength(Circle.ballCount);
-  for (var i = 0; i < Circle.ballCount; i++) {
+  var balls = new List(Circle.BALL_COUNT);
+  for (var i = 0; i < Circle.BALL_COUNT; i++) {
     var ball = new Circle(width/2, height/2,
-        randomDouble((Circle.ballCount * 2).toDouble()));
+        randomDouble((Circle.BALL_COUNT * 2).toDouble()));
     balls[i] = ball;
     document.onKeyDown.listen(ball.onKeyDown);
   }
   // Redraw every ballCount ms.
-  new Timer.repeating(const Duration(milliseconds: Circle.ballCount),
+  new Timer.periodic(const Duration(milliseconds: Circle.BALL_COUNT),
       (t) => draw(context, balls));
 }
 
