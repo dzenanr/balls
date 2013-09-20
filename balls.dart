@@ -81,9 +81,14 @@ main() {
     balls[i] = ball;
     document.onKeyDown.listen(ball.onKeyDown);
   }
-  // Redraw every ballCount ms.
-  new Timer.periodic(const Duration(milliseconds: Circle.BALL_COUNT),
-      (t) => draw(context, balls));
+
+  gameLoop(num delta) {
+    draw(context, balls);
+    window.animationFrame.then(gameLoop);
+  }
+
+  // redraw
+  window.animationFrame.then(gameLoop);
 }
 
 
