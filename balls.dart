@@ -28,7 +28,7 @@ class Circle {
     dx = randomDouble(7.0);
     dy = randomDouble(7.0);
 
-    canvas = document.query('#canvas');
+    canvas = document.querySelector('#canvas');
     context = canvas.getContext('2d');
 
     colorCode = randomColorCode();
@@ -70,7 +70,7 @@ draw(context, balls) {
 }
 
 main() {
-  CanvasElement canvas = document.query('#canvas');
+  CanvasElement canvas = document.querySelector('#canvas');
   CanvasRenderingContext2D context = canvas.getContext('2d');
   var width = canvas.width;
   var height = canvas.height;
